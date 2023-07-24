@@ -10,7 +10,7 @@ import BackButton from '../components/BackButton';
 import { getUserProfile } from '../utils/userProfile';
 import {Text, Button, TextInput, RadioButton} from 'react-native-paper';
 import theme from '../components/theme';
-import { Platform } from 'react-native'; 
+
 
 const EditProfileScreen = () => {
 
@@ -31,6 +31,7 @@ const EditProfileScreen = () => {
 
 
     useEffect(() => {
+        console.log("here1")
         getUserProfile(userId)
             .then((userProfile) => {
                 setName(userProfile.name);
@@ -99,10 +100,10 @@ const EditProfileScreen = () => {
     };
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{flex: 1, justifyContent:'center'}}>
             <BackButton/>
 
-            <ScrollView style={{ flex: 1, justiifyContent:'center'}}>
+            <ScrollView>
                 
                 <Text style={{fontSize: 30, marginTop: 30, marginBottom: 30, alignSelf: 'center'}}>Edit your profile!</Text>
                 

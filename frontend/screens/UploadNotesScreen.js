@@ -4,7 +4,7 @@ import { TextInput, Button, Text, Snackbar  } from 'react-native-paper';
 import { getDocs, addDoc } from 'firebase/firestore';
 import { notesReference} from '../firebase';
 import {pickFile, uploadFileToFirebase} from '../utils/fileUpload';
-import { BackButton } from '../components';
+import BackButton from '../components/BackButton';
 import { useNavigation } from '@react-navigation/native';
 
 

@@ -4,15 +4,15 @@ import { auth, db, profilesReference, storage  } from '../firebase';
 import { useNavigation } from '@react-navigation/native';
 import {Picker} from '@react-native-picker/picker';
 import { addDoc } from 'firebase/firestore';
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import * as ImagePicker from 'expo-image-picker';
-import {BackButton} from '../components';
+import BackButton from '../components/BackButton';
 import {uploadImageToFirebase, pickImage} from '../utils/imageUpload';
 import {Text, Button, TextInput} from 'react-native-paper';
 import theme from '../components/theme'
-import { Platform } from 'react-native';
+import BottomNavigation from 'react-native-paper';
 
 const CreateProfileScreen = () => {
+
+  
 
     const [name, setName] = useState('');
     const [school, setSchool] = useState('');
@@ -36,6 +36,7 @@ const CreateProfileScreen = () => {
     };
 
     const handleCreateProfile = async () => {
+        console.log(name, school, yearOfStudy, course, gender, bio, studySpot,  image)
         if (name === "" || school === "" || yearOfStudy === "" || course === "" || gender === "" || bio === "" || studySpot === "" || image === null) {
             alert("Please enter all required fields");
             return
@@ -72,7 +73,7 @@ const CreateProfileScreen = () => {
                 // setGender('');
                 // setStudySpot('');
                 // setBio('');
-                navigation.navigate("HomeScreen")
+                navigation.navigate("BottomNavigator")
             })
             .catch((error) => {
                 console.error('Error creating profile:', error);
@@ -82,10 +83,11 @@ const CreateProfileScreen = () => {
 
 
     return (
-        <SafeAreaView>
-            <BackButton/>
+        <SafeAreaView style={{flex: 1, justifyContent:'center'}}>
 
-            <ScrollView style={{ flex: 1, justiifyContent:'center'}}>
+            
+            <ScrollView >
+              <BackButton />
                 
                 <Text style={{fontSize: 30, marginTop: 30, marginBottom: 30, alignSelf: 'center'}}>Create your profile!</Text>
                 
@@ -221,7 +223,6 @@ const CreateProfileScreen = () => {
                     const uri = await pickImage();
                     if(uri) {
                         setImage(uri);
-                        setImageChanged(true);
                     }
             }}>
                 Pick an Image from your camera roll

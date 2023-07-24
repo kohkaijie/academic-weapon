@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { KeyboardAvoidingView, StyleSheet, TouchableOpacity, View, Alert, SafeAreaView} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 // import { Platform } from "react-native";
-import { BackButton } from "../components";
+import BackButton from "../components/BackButton";
 import { TextInput, Button, Title, Text} from 'react-native-paper';
 import { auth } from "../firebase";
 
@@ -35,7 +35,7 @@ const ResetPasswordScreen = () => {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <BackButton />
   
       <Title style={{textAlign: 'center', marginBottom: 40}}>Forgot Your Password?</Title>

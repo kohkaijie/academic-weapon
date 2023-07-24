@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     inputContainer: {
       width: '80%',
       alignSelf: 'center',
-      margin: 10
+      margin: 10 
     },
     input: {
       backgroundColor: 'white',

@@ -2,11 +2,10 @@ import { Alert, KeyboardAvoidingView, SafeAreaView, StyleSheet, View } from 'rea
 import React, { useState } from 'react'
 import { auth, profilesReference } from '../firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation,  } from '@react-navigation/native';
 import { getDocs, query, where } from "firebase/firestore";
-import {BackButton} from '../components';
+import BackButton from '../components/BackButton';
 import {Button, Text, TextInput} from 'react-native-paper';
-import { Platform } from 'react-native';
 
 const LoginScreen = ({alertSvc, mockFunction}) => {
 
@@ -146,7 +145,7 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
       width: '60%',
-      justifyContent: 'center',
+      justifyContent: 'center', 
       alignItems: 'center',
       marginTop: 40,
     },

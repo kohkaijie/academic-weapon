@@ -112,7 +112,7 @@ const HomeScreen = () => {
       <Appbar.Header testID='banner' mode={'center-aligned'} style={{ backgroundColor: theme.colors.primary}}>
           <Appbar.Content title="Find your Study Buddy today!" color={`#f0f8ff`}/>  
       </Appbar.Header>
-      
+       
             {showFilter && (  
                <Modal
                animationType="slide"
@@ -133,7 +133,7 @@ const HomeScreen = () => {
                     value={search}
                     onChangeText={setSearch}
                   />
-                
+                 
                   <Text variant='labelLarge' style={styles.select}>Select School</Text>
                   <View style={styles.picker}>
                     <Picker

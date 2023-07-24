@@ -18,9 +18,9 @@ export default function App() {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user && user.emailVerified) {    
+      if (user && user.emailVerified) {     
         setIsAuthenticated(true);
-      } else {
+      } else {   
         setIsAuthenticated(false);
       }   
     })
